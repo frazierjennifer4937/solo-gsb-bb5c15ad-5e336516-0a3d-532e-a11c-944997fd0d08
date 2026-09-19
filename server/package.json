@@ -1,0 +1,21 @@
+{
+  "name": "@app/server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "字幕脱敏审校台 API 与静态资源服务",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@app/shared": "*",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.16.0",
+    "tsx": "^4.19.2"
+  }
+}

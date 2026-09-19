@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    container_name: subtitle-redaction-workbench
+    ports:
+      - "8080:8080"
+    environment:
+      # 服务监听端口（容器内）；如需修改，请同步调整上方 ports 映射
+      PORT: 8080
+    restart: unless-stopped

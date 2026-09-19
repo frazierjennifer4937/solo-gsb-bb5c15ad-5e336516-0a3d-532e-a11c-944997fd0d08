@@ -1,0 +1,20 @@
+{
+  "name": "subtitle-redaction-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "description": "字幕脱敏审校台：WebVTT 正则脱敏、优先级合并、逐条撤销预览与审计导出",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "build": "npm run build -w @app/shared && npm run build -w @app/server && npm run build -w @app/client",
+    "dev": "npm run build -w @app/shared && concurrently -n shared,server,client -c blue,green,magenta \"npm run dev -w @app/shared\" \"npm run dev -w @app/server\" \"npm run dev -w @app/client\"",
+    "start": "node server/dist/index.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.6.3"
+  }
+}
